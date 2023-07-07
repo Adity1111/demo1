@@ -1,48 +1,93 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+interface IData {
+  useId: number;
+  id: number;
+  title: string;
+  body: string;
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'SingleSourcePlatform';
+  Students = [
+    {
+    "id": 1,
+    "name": "Nathaniel Graham",
+    "email": "nathaniel.graham@example.com"
+  },
+  {
+    "id": 2,
+    "name": "Avery Adams",
+    "email": "avery.adams@example.com"
+  },
+  {
+    "id": 3,
+    "name": "Mario Stevens",
+    "email": "mario.stevens@example.com"
+  },
+  {
+    "id": 4,
+    "name": "Constance Beck",
+    "email": "constance.beck@example.com"
+  },
+  {
+    "id": 5,
+    "name": "Jimmie Little",
+    "email": "jimmie.little@example.com"
+  },
+  {
+    "id": 6,
+    "name": "Avery Matthews",
+    "email": "avery.matthews@example.com"
+  },
+  {
+    "id": 7,
+    "name": "Pat Sutton",
+    "email": "pat.sutton@example.com"
+  },
+  {
+    "id": 8,
+    "name": "Danny Crawford",
+    "email": "danny.crawford@example.com"
+  },
+  {
+    "id": 9,
+    "name": "Pearl Mccoy",
+    "email": "pearl.mccoy@example.com"
+  },
+  {
+    "id": 10,
+    "name": "Flenn Wallace",
+    "email": "flenn.wallace@example.com"
+  }
+]
+  fetchedData: IData[] = [];
+  displayedData: IData[] = [];
+  itemsPerPage: number = 15;
+  allPages: number;
 
-  myPersonal:Personal={
+  constructor(private http: HttpClient) {
+    this.fetchData();
+  }
 
-  FullName: "Pooja",
-  Age:21,
-  Gender:"Female",
-  DOB:"1999-04-29",
-  EducationQualification:[
-    {Course:"B.E", Institute:"PESCE", Year:"2018 - ", Percentage:"8.26"},
-    {Course:"PUE", Institute:"Srinivasa Indp PU Collge", Year:"2013 - 2015", Percentage:"62.7"},
-    {Course:"High School", Institute:"Parikrma Centre for Learning", Year:"2003 - 2013", Percentage:"80.80%"}
-  ],
-  Address:["#548, 5th cross, 6th main road, VR Nagar, Jayanagar 1st Block, Bangalore,560011","Address 2"],
-  Email:"adityaraj@gmail.com",
-  PhNum:8050180183,
-  FName:"Selvaraj",
-  MName:"Pushpa",
-  Hobbies:["Chess", "Swimming", "Cycling"],
-  Tech:["Py", "Django", "Flask", "ML", "FullStack"]
+  fetchData(): void {
+    const dataConfig$ = this.http.get('https://jsonplaceholder.typicode.com/posts');
+    dataConfig$.subscribe((data: any) => {
+        this.fetchedData = data;
+        this.onPageChange();
+        this.allPages = Math.ceil(this.fetchedData.length / this.itemsPerPage);
+      }
+    );
+  }
 
-  
-};
-
-
-}
-class Personal{
-  FullName:string;
-  Age:number;
-  Gender:string;
-  DOB:string;
-  EducationQualification:any[];
-  Address:string[];
-  Email:string;
-  PhNum:number;
-  FName:string;
-  MName:string;
-  Hobbies:string[];
-  Tech:string[];
+  onPageChange(page: number = 1): void {
+    const startItem = (page - 1) * this.itemsPerPage;
+    const endItem = page * this.itemsPerPage;
+    this.displayedData = this.fetchedData.slice(startItem, endItem);
+  }
 }
