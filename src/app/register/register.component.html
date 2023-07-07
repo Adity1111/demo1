@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="form-horizontal">
+		<div class="form-group">
+			<form name="registerform" method="post" onsubmit="return saveForm();">
+                <div class="container">
+                    <h1>Customer Registration</h1>
+                    <hr>
+                
+                    <label for="name"><b>Full Name</b></label>
+                    <input type="text" placeholder="Enter Full Name" id="fullName" name="name" required>
+                
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" id="email" name="email" required>
+                
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+                
+                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="confirmPassword" required>
+                    <hr>
+                    <button type="cancel" class="btn btn-primary" style="background-color: red" align="left">Cancel</button>
+                    <input type="button" class="btn btn-primary" style="background-color: green" onClick="saveForm()" value="Submit">
+                
+                  </div>
+                <div id="Result"></div> 
+                
+              </form>
+		</div>
+	</div>
+</div> 

@@ -1,0 +1,139 @@
+   <!-- <div class="container">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <form name="productform" method="post" onsave="return addproduct();">
+                    <div class="container">
+                        <h1>Add New product</h1>
+                        <hr>
+                    
+                        <label for="Name"><b>ProductName</b></label>
+                        <input type="text" placeholder="Enter product Name" id="Name" name="name" required>
+                        
+<label for="Name"><b>Category</b></label>
+                      
+                  
+      <form>
+         <select name = "dropdown">
+            <option value = "Mobile" selected>Mobile</option>
+            <option value = "Computer">Computer</option>
+            <option value = "Watches">Watches</option>
+            <option value = "Accesories">Accesories</option>
+         </select>
+      </form>
+      
+     
+      <h1>description</h1>
+
+      <form action="/action_page.php">
+      <label for="w3review"></label>
+      <textarea id="w3review" name="w3review" rows="4" cols="50">
+       
+        </textarea>
+        <br><br>
+        
+        <input type="file" id="myFile" name="filename">
+      </form>
+      
+       <hr>
+                        <label for="price"><b>Unit price</b></label>
+                        <form>
+                          
+                          <input type="text" name="Name" size="20">
+                          <br> <br>
+                          </form>
+                        
+                        <hr>
+                        <button type="cancel" class="btn btn-primary" style="background-color: rgb(117, 4, 83)" align="left">Cancel</button>
+                        <input type="button" class="btn btn-primary" style="background-color: rgb(128, 115, 0)" onClick="addproduct()" value="Save">
+                    
+                      </div>
+                    <div id="Result"></div> 
+                    
+                  </form>
+            </div>
+        </div>
+    </div>  -->
+    <div class="container">
+      <div class="row">
+          <form>
+              <div class="form-horizontal">
+                  <div class="row text-center">
+                      <h2>Add New Product</h2>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label class="control-label">Product Name:</label>
+                              <input class="form-control" id="productName" placeholder="Product Name" name="productname">
+  
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label class="control-label">Description:</label>
+                              <input class="form-control" id="productDescription" placeholder="Product Description" name="productDescription">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label class="control-label" for="category">Category:</label>
+                              <select class="form-control">
+                                <option value="0">Choose Category</option>
+                                <option value="1">Mobiles</option>
+                                <option value="2">Watches</option>
+                                <option value="3">Computers</option>
+                                <option value="4">Accesseries</option>
+                             </select>
+  
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label class="control-label">Unit Price:</label>
+  
+                              <input type="number" class="form-control" id="unitPrice" placeholder="" name="unitprice">
+  
+                          </div>
+                      </div>
+  
+                  </div>
+                  <div class="row">
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label class="control-label" for="category">Rating:</label>
+                              <select class="form-control">
+                <option>Choose Rating</option>
+                <option>5</option>
+                <option>4</option>
+                <option>3</option>
+                <option>2</option>
+              </select>
+  
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label class="control-label">Available Stock:</label>
+  
+                              <input type="number" class="form-control" id="availableStock" placeholder="0" name="availableStock">
+  
+                          </div>
+                      </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="form-group">
+                          <div class="col-offset-2">
+                              <input type="submit" class="btn btn-danger" value="Cancel"> &nbsp;
+                              <input type="submit" class="btn btn-success" value="Save Product">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+  
+  </div>
+  

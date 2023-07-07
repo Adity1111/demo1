@@ -1,0 +1,49 @@
+<div class="container">
+	<div class="form-horizontal">
+		<div class="form-group">
+			<div>
+				<label>{{myPersonal.FullName}}</label><br>
+				<label>{{myPersonal.Age}}</label><br>
+				<label>{{myPersonal.Gender}}</label><br>
+				<label>Date of Birth : {{myPersonal.DOB}}</label><hr>
+				<div style="overflow-x:auto;">
+				<table style="border-width: thin;">
+				  <thead>
+					<th>Degree</th>
+					<th>Institute</th>
+					<th>Year</th>
+					<th>Percentage</th>
+				  </thead>
+				  <tbody *ngFor="let qual of myPersonal.EducationQualification">
+				<td>{{qual.Course }}</td>
+				<td>{{qual.Institute}}</td>
+				<td>{{qual.Year}}</td>
+				<td>{{qual.Percentage}}</td>
+				  </tbody>
+				</table>
+				</div>
+				<!--label>{{myPersonal.dept}}</label><br>
+				<label>{{myPersonal.CollegeName}}</label-->
+				<hr>
+				<label>Address : </label><br>
+				<ul *ngFor="let address of myPersonal.Address">
+					<li>{{address}}</li>
+				</ul>
+				
+				<label>{{myPersonal.Email}}</label><br>
+				<label>{{myPersonal.PhNum}}</label><br>
+				<label>{{myPersonal.FName}}</label><br>
+				<label>{{myPersonal.MName}}</label><hr>
+				<label>Hobbies : </label><br>
+				<ul *ngFor="let hobbies of myPersonal.Hobbies">
+					<li>{{hobbies}}</li>
+				</ul>
+				<label>Technology : </label><br>
+				<ul *ngFor="let tech of myPersonal.Tech">
+					<li>{{tech}}</li>
+				</ul>
+				<hr>
+			</div>
+		</div>
+	</div>
+</div> 

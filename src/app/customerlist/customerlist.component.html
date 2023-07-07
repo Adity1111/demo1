@@ -1,0 +1,34 @@
+<div>
+    <div>
+        <h2>customer View</h2>
+
+        <h2> You are viewing the customerList {{customerName}}</h2>
+
+
+        <table class="table table-bordered">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>State</th>
+                <th>Country</th>
+            
+               
+            </thead>
+            <tbody *ngFor="let customer of customerList">
+               
+                    <td>{{customer.customerId}}</td>
+                    <td>{{customer.customerName}}</td>
+                    <td>{{customer.address}}</td>
+                    <td>{{customer.state}}</td>
+                    <td>{{customer.country}}</td>
+                
+               
+               
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>

@@ -1,0 +1,21 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid black;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+a {
+  font-weight: bold;
+}
+.polarid{
+  border: 1px solid #4C3C1B;
+  padding: 8px 80px 8px 8px;
+  width: 300px;
+  }
