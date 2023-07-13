@@ -1,25 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { PaginationComponent } from './pagination/pagination.component';
-import { DataListComponent } from './data-list/data-list.component';
-import { HttpClientModule } from '@angular/common/http';
-import { SearchFilterPipe } from './search-filter.pipe';
-import { FormsModule } from '@angular/forms';
 
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+import { PaginationModule } from './app-pagination/app-pagination.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PaginationComponent,
-    DataListComponent,
-    SearchFilterPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    FormsModule
+    AppRoutingModule,
+
+    PaginationModule
   ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
